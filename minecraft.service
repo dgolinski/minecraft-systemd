@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft
+Requires=local-fs.target network-online.target
+After=local-fs.target network-online.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/screen -D -m -S "minecraft" -t "minecraft" /home/minecraft/minecraft_service.sh
+
+
+[Install]
+WantedBy=multi-user.target
